@@ -17,7 +17,10 @@ const rebuild = () => {
 
 	return gulp.src("src/main.scss")
 		.pipe(sourcemaps.init())
+
+			// Commenting out this next line makes the problem disappear
 			.pipe(gulpPostCSS(plugins, { syntax: syntaxSCSS }))
+
 			.pipe(gulpSass())
 			.pipe(rename("bundle.css"))
 		.pipe(sourcemaps.write("."))
