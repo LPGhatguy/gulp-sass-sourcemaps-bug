@@ -1,0 +1,10 @@
+@import "reset";
+
+body {
+	// Here we use an undefined variable to get
+	// gulp-sass/node-sass/libsass to throw an error.
+	// It should be showing the line with the undefined variable.
+
+	// This line will show in the error message instead.
+	world: $red;
+}

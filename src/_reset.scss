@@ -1,0 +1,8 @@
+$a: "a";
+
+// The bug seems to be caused by variable interpolation
+// mixed with multiple line selectors.
+// Taking away either here resolves the bug.
+#{$a}, b,
+c {
+}
