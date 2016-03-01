@@ -1,4 +1,11 @@
-@import "reset";
+$a: "a";
+
+// The bug seems to be caused by variable interpolation
+// mixed with multiple line selectors.
+// Taking away either here resolves the bug.
+#{$a}, b,
+c {
+}
 
 body {
 	// Here we use an undefined variable to get
@@ -6,5 +13,5 @@ body {
 	// It should be showing the line with the undefined variable.
 
 	// This line will show in the error message instead.
-	world: $red;
+	color: $red;
 }
