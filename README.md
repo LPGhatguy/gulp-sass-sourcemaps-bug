@@ -29,3 +29,12 @@ Error: Undefined variable: "$red".
 ```
 
 Check out `src/main.scss` for details.
+
+## Problem
+The problem is documented in `src/_reset.scss`. It could be a number of issues:
+
+- postcss-sassy-import isn't written correctly
+- postcss (or gulp-postcss) doesn't output proper sourcemaps on multiline selectors
+- postcss-scss doesn't parse variable interpolation correctly
+- gulp-sass, node-sass, or libsass doesn't account for preexisting sourcemaps
+- this gulpfile isn't properly written
