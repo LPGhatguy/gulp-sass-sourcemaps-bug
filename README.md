@@ -13,8 +13,8 @@ Output like this should follow:
 
 ```
 C:\projects\web\gulp-sass-sourcemaps-bug>gulp
-[00:19:48] Using gulpfile C:\projects\web\gulp-sass-sourcemaps-bug\gulpfile.js
-[00:19:48] Starting 'default'...
+[00:33:11] Using gulpfile C:\projects\web\gulp-sass-sourcemaps-bug\gulpfile.js
+[00:33:11] Starting 'default'...
 
 events.js:154
       throw er; // Unhandled 'error' event
@@ -28,13 +28,4 @@ Error: Undefined variable: "$red".
     at options.error (C:\projects\web\gulp-sass-sourcemaps-bug\node_modules\node-sass\lib\index.js:277:32)
 ```
 
-Check out `src/main.scss` for details.
-
-## Problem
-The problem is documented in `src/_reset.scss`. It could be a number of issues:
-
-- postcss-sassy-import isn't written correctly
-- postcss (or gulp-postcss) doesn't output proper sourcemaps on multiline selectors
-- postcss-scss doesn't parse variable interpolation correctly
-- gulp-sass, node-sass, or libsass doesn't account for preexisting sourcemaps
-- this gulpfile isn't properly written
+Check out `src/main.scss` and `gulpfile.js` for details.
